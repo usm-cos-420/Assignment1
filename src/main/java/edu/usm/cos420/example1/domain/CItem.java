@@ -6,8 +6,6 @@
 
 package edu.usm.cos420.example1.domain;
 
-import java.io.Serializable;
-
 
 /**
  *
