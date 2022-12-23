@@ -17,9 +17,9 @@ import java.io.Serializable;
  *  information in this class 
  * 
  */
-public class CItem implements Serializable {
+public class CItem {
     
-	private static final long serialVersionUID = 7526472295622776147L;
+//	private static final long serialVersionUID = 7526472295622776147L;
     private Long id;
     private static Long COUNTER = 0L;
 	private Integer myInteger;

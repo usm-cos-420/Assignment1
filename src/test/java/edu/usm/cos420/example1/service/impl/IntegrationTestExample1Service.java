@@ -3,19 +3,23 @@ package edu.usm.cos420.example1.service.impl;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.google.gson.reflect.TypeToken;
+
 import edu.usm.cos420.example1.dao.GenericDao;
-import edu.usm.cos420.example1.dao.ObjectStreamDao;
+import edu.usm.cos420.example1.dao.JsonDao;
 import edu.usm.cos420.example1.dao.domain.CItemDao;
 import edu.usm.cos420.example1.domain.CItem;
 import edu.usm.cos420.example1.service.ExampleService;
@@ -27,7 +31,8 @@ public class IntegrationTestExample1Service {
     
 	@Before
 	public void setupData() {
-	   dao = new ObjectStreamDao<Long, CItem>("_test.ser");
+       Type t = new TypeToken<Map<Long, CItem>>(){}.getType(); 
+	   dao = new JsonDao<>("_test.json",t);
 	   citemDao = new CItemDao(dao);
 	   testService = new Example1Service(citemDao);
 	}
@@ -72,7 +77,7 @@ public class IntegrationTestExample1Service {
 	public void tearDown()
 	{
 
-		Path path = FileSystems.getDefault().getPath(".", "_test.ser");
+		Path path = FileSystems.getDefault().getPath(".", "_test.json");
 		try {
 		    Files.delete(path);
 		} catch (NoSuchFileException x) {

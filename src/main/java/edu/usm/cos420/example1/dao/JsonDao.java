@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class JsonDao<IDType, T extends Serializable> implements GenericDao<IDType, T> {
+public class JsonDao<IDType, T> implements GenericDao<IDType, T> {
 
 	// collection class to read entities in & out of persistent storage
 	private Map<IDType, T> entityMap = new HashMap<>();

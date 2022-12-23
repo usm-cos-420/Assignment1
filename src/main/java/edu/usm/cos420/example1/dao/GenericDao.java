@@ -11,7 +11,7 @@ import java.util.List;
  * @param <T> the entity type
  * @param <ID> the primary key type
  */
-public interface GenericDao<IDType, T extends Serializable> {
+public interface GenericDao<IDType, T> {
 
 	/**
 	 *  Add an entity to the persisted collection 
