@@ -12,10 +12,7 @@ import java.io.Serializable;
 /**
  *
  *  For the purposes of this example, CItem holds three 
- *  piece of data. The class implements the interface 
- *  Serializable so that we can store and retrieve the 
- *  information in this class 
- * 
+ *  piece of data.  * 
  */
 public class CItem {
     
@@ -32,7 +29,7 @@ public class CItem {
 	public CItem() {
         myInteger = Integer.valueOf(0);
         myString = new String("");
-        	id = generateId();
+        id = generateId();
     }
 
 	/** 
@@ -42,7 +39,7 @@ public class CItem {
     public CItem(int n, String str) {
         myInteger = Integer.valueOf(n);
         myString = str;
-    	    id = generateId();
+    	id = generateId();
     }
 
     /** 
@@ -51,7 +48,7 @@ public class CItem {
     public CItem(Long id, int n, String str) {
         myInteger = Integer.valueOf(n);
         myString = str;
-    	    this.id = id;
+    	this.id = id;
     }
 
     /**
