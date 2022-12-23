@@ -17,6 +17,8 @@ public class CItemView{
 	/** {@value #ADDONE}  : Add one CItem to the collection of items */
     public static final int ADDONE = 1;
 	/** {@value #DISPLAYALL}  : Display CItem collection of items */
+    public static final int DISPLAYALL = 2;
+ 	
     public static final int EXIT = 6;
   
     // Object to read menu choices
@@ -48,7 +50,8 @@ public class CItemView{
     System.out.println();
     System.out.println("Enter the number denoting the action " +
                        "to perform:");
-    System.out.println("ADD one....................." + ADDONE);
+    System.out.println("ADD one CItem..............." + ADDONE);
+    System.out.println("List all CItems............." + DISPLAYALL);
     System.out.println("Exit........................" + EXIT);
   }
 

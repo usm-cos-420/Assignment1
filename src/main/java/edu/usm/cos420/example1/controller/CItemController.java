@@ -1,6 +1,10 @@
 package edu.usm.cos420.example1.controller;
 
 
+import java.util.Iterator;
+import java.util.List;
+
+import edu.usm.cos420.example1.domain.CItem;
 import edu.usm.cos420.example1.service.ExampleService;
 import edu.usm.cos420.example1.view.impl.CItemView;
 
@@ -49,6 +53,17 @@ public class CItemController {
 	    {
 	      	atMyService.addACItem();
 	   	    System.out.println("Added one item ");
+	    }
+	    else if (choice == CItemView.DISPLAYALL)
+	    {
+	    	List<CItem> clist = atMyService.getAll();
+			Iterator<CItem> iter = clist.iterator();
+	   		 while (iter.hasNext())
+	   		 {
+	   			 CItem anItem = iter.next();
+	   			 System.out.println(anItem);
+	   		 }
+
 	    }
 	    else if (choice == CItemView.EXIT)
 	      System.out.println("Goodbye.");
