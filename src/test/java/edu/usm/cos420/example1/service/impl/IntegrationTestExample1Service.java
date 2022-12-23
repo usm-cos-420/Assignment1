@@ -23,6 +23,7 @@ import edu.usm.cos420.example1.dao.JsonDao;
 import edu.usm.cos420.example1.dao.domain.CItemDao;
 import edu.usm.cos420.example1.domain.CItem;
 import edu.usm.cos420.example1.service.ExampleService;
+import edu.usm.cos420.example1.service.ExampleService;
 
 public class IntegrationTestExample1Service {
 	GenericDao<Long, CItem> dao;
@@ -34,7 +35,7 @@ public class IntegrationTestExample1Service {
        Type t = new TypeToken<Map<Long, CItem>>(){}.getType(); 
 	   dao = new JsonDao<>("_test.json",t);
 	   citemDao = new CItemDao(dao);
-	   testService = new Example1Service(citemDao);
+	   testService = new ExampleService(citemDao);
 	}
 	
 	@Test

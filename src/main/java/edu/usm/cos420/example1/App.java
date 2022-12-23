@@ -2,7 +2,7 @@ package edu.usm.cos420.example1;
 
 import edu.usm.cos420.example1.controller.CItemController;
 import edu.usm.cos420.example1.service.ExampleService;
-import edu.usm.cos420.example1.service.impl.Example1Service;
+import edu.usm.cos420.example1.service.ExampleService;
 import edu.usm.cos420.example1.view.impl.CItemView;
 
 /**
@@ -26,7 +26,7 @@ public class App
      */
 	public static void main( String[] args )
     {
-		ExampleService service = new Example1Service();
+		ExampleService service = new ExampleService();
 		CItemView citemView = new CItemView();
 		CItemController controller = new CItemController(citemView,service);		
 		controller.provideCItemAccess();
