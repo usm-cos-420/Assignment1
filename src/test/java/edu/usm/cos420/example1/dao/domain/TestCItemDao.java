@@ -8,14 +8,11 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
-import java.util.List;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.usm.cos420.example1.dao.GenericDao;
-import edu.usm.cos420.example1.dao.ObjectStreamDao;
 import edu.usm.cos420.example1.domain.CItem;
 
 public class TestCItemDao {
@@ -57,9 +54,9 @@ public class TestCItemDao {
         CItem retrievedItem;
         
     	
-        CItem oneItem = new CItem(new Long((int) (Math.random()*100000)), 1, "a string"); 
-        CItem twoItem = new CItem(new Long((int) (Math.random()*100000)), 2, "a string"); 
-        CItem threeItem = new CItem(new Long((int) (Math.random()*100000)), 3, "a string"); 
+        CItem oneItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 1, "a string"); 
+        CItem twoItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 2, "a string"); 
+        CItem threeItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 3, "a string"); 
         
         // get PK of first address
         id = oneItem.getId();        
@@ -83,9 +80,9 @@ public class TestCItemDao {
         CItem retrievedItem;
         
     	
-        CItem oneItem = new CItem(new Long((int) (Math.random()*100000)), 1, "a string"); 
-        CItem twoItem = new CItem(new Long((int) (Math.random()*100000)), 2, "a string"); 
-        CItem threeItem = new CItem(new Long((int) (Math.random()*100000)), 3, "a string"); 
+        CItem oneItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 1, "a string"); 
+        CItem twoItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 2, "a string"); 
+        CItem threeItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 3, "a string"); 
         
         // get PK of first address
         id = oneItem.getId();        
@@ -131,9 +128,9 @@ public class TestCItemDao {
         CItem retrievedItem;
         
     	
-        CItem oneItem = new CItem(new Long((int) (Math.random()*100000)), 1, "a string"); 
-        CItem twoItem = new CItem(new Long((int) (Math.random()*100000)), 2, "a string"); 
-        CItem threeItem = new CItem(new Long((int) (Math.random()*100000)), 3, "a string"); 
+        CItem oneItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 1, "a string"); 
+        CItem twoItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 2, "a string"); 
+        CItem threeItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 3, "a string"); 
         
         // get PK of first address
         id = oneItem.getId();        

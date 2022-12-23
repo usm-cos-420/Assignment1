@@ -63,9 +63,9 @@ public class TestJsonDao
         CItem retrievedItem;
         
     	
-        CItem oneItem = new CItem(new Long((int) (Math.random()*100000)), 1, "a string"); 
-        CItem twoItem = new CItem(new Long((int) (Math.random()*100000)), 2, "a string"); 
-        CItem threeItem = new CItem(new Long((int) (Math.random()*100000)), 3, "a string"); 
+        CItem oneItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 1, "a string"); 
+        CItem twoItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 2, "a string"); 
+        CItem threeItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 3, "a string"); 
         
         // get PK of first address
         id = oneItem.getId();        
@@ -89,9 +89,9 @@ public class TestJsonDao
         CItem retrievedItem;
         
     	
-        CItem oneItem = new CItem(new Long((int) (Math.random()*100000)), 1, "a string"); 
-        CItem twoItem = new CItem(new Long((int) (Math.random()*100000)), 2, "a string"); 
-        CItem threeItem = new CItem(new Long((int) (Math.random()*100000)), 3, "a string"); 
+        CItem oneItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 1, "a string"); 
+        CItem twoItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 2, "a string"); 
+        CItem threeItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 3, "a string"); 
         
         // get PK of first address
         id = oneItem.getId();        
@@ -172,9 +172,9 @@ public class TestJsonDao
 	    Type t1 = new TypeToken<Map<Long, CItem>>(){}.getType(); 
 
  	    JsonDao<Long,CItem> pdao = new JsonDao<Long, CItem>("_ptest.json",t1);
-        CItem oneItem = new CItem(new Long((int) (Math.random()*100000)), 1, "a string"); 
-        CItem twoItem = new CItem(new Long((int) (Math.random()*100000)), 2, "a string"); 
-        CItem threeItem = new CItem(new Long((int) (Math.random()*100000)), 3, "a string"); 
+        CItem oneItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 1, "a string"); 
+        CItem twoItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 2, "a string"); 
+        CItem threeItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 3, "a string"); 
 
         int initialCount = pdao.determineNumberOfObjectsInStream();
 

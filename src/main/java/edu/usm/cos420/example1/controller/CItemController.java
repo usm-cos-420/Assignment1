@@ -1,8 +1,6 @@
 package edu.usm.cos420.example1.controller;
 
-import java.util.List;
 
-import edu.usm.cos420.example1.domain.CItem;
 import edu.usm.cos420.example1.service.ExampleService;
 import edu.usm.cos420.example1.view.impl.CItemView;
 

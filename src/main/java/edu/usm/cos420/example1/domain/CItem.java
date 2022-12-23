@@ -30,7 +30,7 @@ public class CItem implements Serializable {
 	 * Creates new CItem with an autogenenerated sequence ID 
 	 */
 	public CItem() {
-        myInteger = new Integer(0);
+        myInteger = Integer.valueOf(0);
         myString = new String("");
         	id = generateId();
     }
@@ -40,7 +40,7 @@ public class CItem implements Serializable {
 	 * Creates new CItem with an autogenenerated sequence ID 
 	 */
     public CItem(int n, String str) {
-        myInteger = new Integer(n);
+        myInteger = Integer.valueOf(n);
         myString = str;
     	    id = generateId();
     }
@@ -49,7 +49,7 @@ public class CItem implements Serializable {
      * Three field constructor 
      */
     public CItem(Long id, int n, String str) {
-        myInteger = new Integer(n);
+        myInteger = Integer.valueOf(n);
         myString = str;
     	    this.id = id;
     }
@@ -80,7 +80,7 @@ public class CItem implements Serializable {
 	 * @param i The integer to set.
 	 */
 	public void setMyInteger(int i) {
-		this.myInteger = new Integer(i);
+		this.myInteger = Integer.valueOf(i);
 	}
 	/**
 	 * @return Returns  myString.
