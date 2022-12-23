@@ -21,16 +21,22 @@ public class CItemDao
 
 	/**
 	 * Default constructor creates an Json file called citem.json
-	 * TypeToken allows the GSON parser to map to/from JSON to objects
 	 */
 	public CItemDao()
 	{
-        Type t = new TypeToken<Map<Long, CItem>>(){}.getType(); 
+/*
+     * TypeToken allows the GSON parser to map to/from JSON to objects 
+	 * Gson needs help to unmarshall generics back into the correct type. 
+	 * For more explanation see : 
+	 *   https://github.com/google/gson/blob/master/UserGuide.md#serializing-and-deserializing-generic-types          
+ */
+		Type t = new TypeToken<Map<Long, CItem>>(){}.getType(); 
 		cItemDao = new JsonDao<>("citem.json",t); 
 	}
 
 	/**
 	 * Constructor where the filename is provided 
+	 * @param filename name of the file to store CItem objects
 	 */
 	public CItemDao(String fileName)
 	{

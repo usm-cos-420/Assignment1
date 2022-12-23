@@ -2,8 +2,11 @@ package edu.usm.cos420.example1.dao;
 
 /* 
  *    Data Access Object that uses GSON library (from Google) for 
- *    converting objects to/from json representation.
- *    GSON performance on small datasets is good (https://blog.takipi.com/the-ultimate-json-library-json-simple-vs-gson-vs-jackson-vs-json/) 
+ *    converting objects to/from json representation. A good source for 
+ *    Gson documentation is at https://github.com/google/gson
+ *    
+ *    GSON performance on small datasets is reasonably good 
+ *    (https://blog.takipi.com/the-ultimate-json-library-json-simple-vs-gson-vs-jackson-vs-json/) 
  */
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -22,6 +25,7 @@ public class JsonDao<IDType, T extends Serializable> implements GenericDao<IDTyp
 	private Map<IDType, T> entityMap = new HashMap<>();
 	// filename associated with the ObjectStream
 	private final String fileName;
+	// type will represent the types of ID field and class to be stored/retrieved
 	private final Type type;
 
 	/**
@@ -31,9 +35,11 @@ public class JsonDao<IDType, T extends Serializable> implements GenericDao<IDTyp
 	 *            name of the file to be written to, filename is written to
 	 *            project's current directory
 	 * @param type
-	 *            Type of entity that is stored in the Dao, unfortunately Gson
-	 *            cannot unmarshall generics back into the correct type without this
-	 *            field
+	 *            Type of entity that is stored in the Dao,  Gson needs help to  
+	 *            unmarshall generics back into the correct type. For more 
+	 *            explanation see : 
+	 *            https://github.com/google/gson/blob/master/UserGuide.md#serializing-and-deserializing-generic-types
+	 *            
 	 */
 	public JsonDao(String fileName, Type type) {
 		this.fileName = fileName;
@@ -129,6 +135,7 @@ public class JsonDao<IDType, T extends Serializable> implements GenericDao<IDTyp
 
 	private void readFileIntoMap() {
 		Gson gson = new Gson();
+
 		try {
 			JsonReader jsonReader = new JsonReader(new FileReader(new File(fileName)));
 			entityMap = gson.fromJson(jsonReader, type);
@@ -148,7 +155,6 @@ public class JsonDao<IDType, T extends Serializable> implements GenericDao<IDTyp
 			bufferedOutputStream.write(jsonOutput.getBytes());
 			bufferedOutputStream.close();
 		} catch (IOException e) {
-			System.out.println("An error occurred writing back to file.");
-		}
+			System.out.println("An error occurred writing back to file.");		}
 	}
 }
