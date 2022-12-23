@@ -23,7 +23,6 @@ import edu.usm.cos420.example1.dao.JsonDao;
 import edu.usm.cos420.example1.dao.domain.CItemDao;
 import edu.usm.cos420.example1.domain.CItem;
 import edu.usm.cos420.example1.service.ExampleService;
-import edu.usm.cos420.example1.service.ExampleService;
 
 public class IntegrationTestExample1Service {
 	GenericDao<Long, CItem> dao;

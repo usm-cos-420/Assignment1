@@ -2,7 +2,6 @@ package edu.usm.cos420.example1;
 
 import edu.usm.cos420.example1.controller.CItemController;
 import edu.usm.cos420.example1.service.ExampleService;
-import edu.usm.cos420.example1.service.ExampleService;
 import edu.usm.cos420.example1.view.impl.CItemView;
 
 /**
