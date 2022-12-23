@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Generic Data Access Interface that defines characteristics of basic CRUD operations
- *
+ * Data Access Interface for basic CRUD (Create/Read/Update/Delete operations
+ *    on a class using templates. It does assume that the classes can be 
+ *    uniquely identified by a single ID field
+ *    
  * @param <T> the entity type
  * @param <ID> the primary key type
  */
