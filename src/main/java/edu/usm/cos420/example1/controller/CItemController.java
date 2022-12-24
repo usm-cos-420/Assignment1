@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import edu.usm.cos420.example1.domain.CItem;
-import edu.usm.cos420.example1.service.ExampleService;
+import edu.usm.cos420.example1.service.CItemService;
 import edu.usm.cos420.example1.view.impl.CItemView;
 
 /**
@@ -15,7 +15,7 @@ import edu.usm.cos420.example1.view.impl.CItemView;
  */	 
 public class CItemController {
 
-	private ExampleService atMyService; 
+	private CItemService citemService; 
 	private CItemView view;
 	
 	/**
@@ -23,10 +23,10 @@ public class CItemController {
 	 * @param view 
 	 * @param service
 	 */
-	public CItemController(CItemView view, ExampleService service)
+	public CItemController(CItemView view, CItemService service)
 	{
 		this.view = view;
-		this.atMyService = service;
+		this.citemService = service;
 	}
 
 	/**
@@ -51,12 +51,12 @@ public class CItemController {
 	    System.out.println();
 	    if (choice == CItemView.ADDONE)
 	    {
-	      	atMyService.addACItem();
+	      	citemService.addACItem();
 	   	    System.out.println("Added one item ");
 	    }
 	    else if (choice == CItemView.DISPLAYALL)
 	    {
-	    	List<CItem> clist = atMyService.getAll();
+	    	List<CItem> clist = citemService.getAll();
 			Iterator<CItem> iter = clist.iterator();
 	   		 while (iter.hasNext())
 	   		 {

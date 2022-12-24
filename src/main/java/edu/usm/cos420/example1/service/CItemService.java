@@ -14,14 +14,14 @@ import edu.usm.cos420.example1.domain.CItem;
  * application. This organization helps support service oriented architectures.
  *
  */
-public class ExampleService {
+public class CItemService {
 
 	CItemDao dao;
 
 	/**
 	 * Default Constructor creates a default CItemDao object
 	 */
-	public ExampleService() {
+	public CItemService() {
 		this.dao = new CItemDao();
 	}
 
@@ -31,7 +31,7 @@ public class ExampleService {
 	 * @param dao
 	 *            Data Access Object to use in the service
 	 */
-	public ExampleService(CItemDao dao) {
+	public CItemService(CItemDao dao) {
 		this.dao = dao;
 	}
 
