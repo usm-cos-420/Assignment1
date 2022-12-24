@@ -50,7 +50,6 @@ public class TestCItemDao {
 
 	@Test
     public void testSaveandRemove1() {
-        Long id; 
         CItem retrievedItem;
         
     	
@@ -59,11 +58,8 @@ public class TestCItemDao {
         CItem threeItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 3, "a string"); 
         
         // get PK of first address
-        id = oneItem.getId();        
         dao.add(oneItem);
-        id = twoItem.getId();        
         dao.add(twoItem);
-        id = threeItem.getId();        
         dao.add(threeItem);
 
         dao.remove(twoItem.getId());
@@ -76,7 +72,6 @@ public class TestCItemDao {
 
 	@Test
     public void testSaveandUpdate1() {
-        Long id; 
         CItem retrievedItem;
         
     	
@@ -85,11 +80,8 @@ public class TestCItemDao {
         CItem threeItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 3, "a string"); 
         
         // get PK of first address
-        id = oneItem.getId();        
         dao.add(oneItem);
-        id = twoItem.getId();        
         dao.add(twoItem);
-        id = threeItem.getId();        
         dao.add(threeItem);
 
         // CHeck one of the three items to make sure it was stored correctly
@@ -124,7 +116,6 @@ public class TestCItemDao {
 
 	@Test
     public void testUpdateAdd() {
-        Long id; 
         CItem retrievedItem;
         
     	
@@ -133,9 +124,7 @@ public class TestCItemDao {
         CItem threeItem = new CItem(Long.valueOf((int) (Math.random()*100000)), 3, "a string"); 
         
         // get PK of first address
-        id = oneItem.getId();        
         dao.add(oneItem);
-        id = twoItem.getId();        
         dao.add(twoItem);
 
         // CHeck one of the three items to make sure it was stored correctly
@@ -157,7 +146,6 @@ public class TestCItemDao {
         assertEquals("Stored int and original int are not equal ", retrievedItem.getMyInteger() , twoItem.getMyInteger());
         assertEquals("Stored int and original int are not equal ", retrievedItem.getMyString() , twoItem.getMyString());
 
-        id = threeItem.getId();        
         dao.add(threeItem);
         
         retrievedItem = dao.find(threeItem.getId());
