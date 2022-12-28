@@ -52,21 +52,17 @@ public class CItemController {
 	    if (choice == CItemView.ADDONE)
 	    {
 	      	citemService.addACItem();
-	   	    System.out.println("Added one item ");
+	   	    view.addNotification();
 	    }
 	    else if (choice == CItemView.DISPLAYALL)
 	    {
 	    	List<CItem> clist = citemService.getAll();
-			Iterator<CItem> iter = clist.iterator();
-	   		 while (iter.hasNext())
-	   		 {
-	   			 CItem anItem = iter.next();
-	   			 System.out.println(anItem);
-	   		 }
-
+			view.displayCItems(clist);
 	    }
 	    else if (choice == CItemView.EXIT)
-	      System.out.println("Goodbye.");
+	        view.exitNotification();
+	    else 
+	        view.invalidChoice();
 	  }
 	  
 }

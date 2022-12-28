@@ -1,6 +1,10 @@
 package edu.usm.cos420.example1.view.impl;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
+
+import edu.usm.cos420.example1.domain.CItem;
 
 
 /* 
@@ -72,4 +76,30 @@ public class CItemView{
     return choice;
   }
   
+  public void displayCItems(List<CItem> clist)
+  {
+	 Iterator<CItem> iter = clist.iterator();
+     while (iter.hasNext())
+  	 {
+  		 CItem anItem = iter.next();
+  		 System.out.println(anItem);
+  	 }
+  }
+  
+  public void addNotification()
+  {
+ 	    System.out.println("Added one item ");
+  }
+  
+  public void exitNotification()
+  {
+ 	    System.out.println("Goodbye");
+  }
+  
+  public void invalidChoice()
+  {
+ 	    System.out.println("Invalid Choice");
+
+  }
+
 }

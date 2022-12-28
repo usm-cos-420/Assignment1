@@ -16,7 +16,7 @@ import edu.usm.cos420.example1.view.impl.CItemView;
  *   Work iteratively ! Do not try to solve the assignment in one go ! So, for example, 
  *       you may want to start by defining the Customer class, then try to store and 
  *       retrieve customers (you will need to make a Data Access class for Customers). 
- *       After finishing with Customers, you might choose to work on inventory items.
+ *       After finishing with Customer1s, you might choose to work on inventory items.
  *       As you will learn in this course, it is often helpful to work on one use case 
  *       at a time. Step by step wins the day !
  */
