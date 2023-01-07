@@ -52,7 +52,7 @@ public class CItemView{
    */
   public void displayMenu () {
     System.out.println();
-    System.out.println("Enter the number denoting the action " +
+    System.out.println("Enter the number # denoting the action " +
                        "to perform:");
     System.out.println("ADD one CItem..............." + ADDONE);
     System.out.println("List all CItems............." + DISPLAYALL);
