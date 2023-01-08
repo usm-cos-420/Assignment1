@@ -10,34 +10,21 @@ package edu.usm.cos420.example1.domain;
 /**
  *
  *  For the purposes of this example, CItem holds three 
- *  piece of data.  * 
+ *  piece of data.  
+ *  
+ *  The id field is necessary for uniquely identifying items.
  */
 public class CItem {
     
-//	private static final long serialVersionUID = 7526472295622776147L;
     private Long id;
-    private static Long COUNTER = 0L;
 	private Integer myInteger;
     private String  myString;
 
-	/** 
-	 * Default Constructor : 
-	 * Creates new CItem with an autogenenerated sequence ID 
-	 */
-	public CItem() {
-        myInteger = Integer.valueOf(0);
-        myString = new String("");
-        id = generateId();
-    }
-
-	/** 
-	 * Two field Constructor : 
-	 * Creates new CItem with an autogenenerated sequence ID 
-	 */
-    public CItem(int n, String str) {
-        myInteger = Integer.valueOf(n);
-        myString = str;
-    	id = generateId();
+    /** 
+     * Single field constructor : at a minimum, the id is needed 
+     */
+    public CItem(Long id) {
+    	this.id = id;
     }
 
     /** 
@@ -99,12 +86,7 @@ public class CItem {
         return String.format("CItem [id=%d,myString=%s,myInteger=%s]", getId(), myString, myInteger);
     }
 
-    // for autogeneration of ids
-    private Long generateId()
-    {
-    	return COUNTER++;
-    }
-
+   
 }
 
 

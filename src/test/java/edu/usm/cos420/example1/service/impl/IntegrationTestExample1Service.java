@@ -58,7 +58,8 @@ public class IntegrationTestExample1Service {
                 
         id = testService.maxCItemId();
         
-	    CItem oneItem = new CItem(2, "test string"); 
+        id = 1L;
+	    CItem oneItem = new CItem(id, 2, "test string"); 
         oneItem.setId(id + 5);
         citemDao.add(oneItem);
         newMax = testService.maxCItemId();

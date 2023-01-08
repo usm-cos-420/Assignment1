@@ -42,7 +42,8 @@ public class TestJsonDao
         Long id; 
         CItem retrievedItem;
         
-        CItem oneItem = new CItem(2, "a string"); 
+        id = 1L;
+        CItem oneItem = new CItem(id, 2, "a string"); 
         
         // get PK of first address
         id = oneItem.getId();
@@ -148,9 +149,12 @@ public class TestJsonDao
     public void testCountObjectsInFile() {
         Long id; 
         
-        CItem oneItem = new CItem(1, "a string"); 
-        CItem twoItem = new CItem(2, "a string"); 
-        CItem threeItem = new CItem(3, "a string"); 
+        id = 1L;
+        CItem oneItem = new CItem(id, 1, "a string"); 
+        id = 2L;
+        CItem twoItem = new CItem(id, 2, "a string"); 
+        id = 3L;
+        CItem threeItem = new CItem(id, 3, "a string"); 
         
         // get PK of first address
         id = oneItem.getId();      

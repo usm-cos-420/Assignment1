@@ -33,7 +33,8 @@ public class TestCItemDao {
         Long id; 
         CItem retrievedItem;
         
-        CItem oneItem = new CItem(2, "a string"); 
+        id = 1L;
+        CItem oneItem = new CItem(id, 2, "a string"); 
         
         // get PK of first address
         id = oneItem.getId();
